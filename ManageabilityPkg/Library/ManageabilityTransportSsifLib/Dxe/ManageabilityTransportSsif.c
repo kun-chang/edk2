@@ -87,6 +87,10 @@ SsifTransportInit (
     DEBUG ((DEBUG_MANAGEABILITY_INFO, "%a: Could not retrieve IPMI SSIF capabilites, use default settings.\n", __func__));
   }
 
+  /* Fixme */
+  mPecSupport        = FALSE;
+  mTransactionSupport = IPMI_GET_SYSTEM_INTERFACE_CAPABILITIES_SSIF_TRANSACTION_SUPPORT_MULTI_PARTITION_RW_WITH_MIDDLE;
+
   // Get protocol specification name.
   ManageabilityProtocolName = HelperManageabilitySpecName (TransportToken->ManageabilityProtocolSpecification);
 

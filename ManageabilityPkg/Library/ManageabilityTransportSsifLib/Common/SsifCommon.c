@@ -335,11 +335,13 @@ SsifCommonSendCommand (
     }
   }
 
+#if 0
   if (TempLength > mMaxRequestSize) {
     Status = EFI_OUT_OF_RESOURCES;
     DEBUG ((DEBUG_ERROR, "%a: Request size defeats BMC capability\n", __func__));
     goto Cleanup;
   }
+#endif
 
   if (  (ResponseData == NULL)
      || (ResponseDataSize == NULL)
